@@ -1,0 +1,52 @@
+{
+  "name": "svelte-vite-ssr",
+  "version": "0.0.1",
+  "description": "svelte boilerplate with ssr and type support",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint '*/**/*.{js,ts,tsx,svelte}' --quiet --fix",
+    "husky:prepare": "husky install",
+    "pre-commit": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miqdadfwz/svelte-vite-ssr.git"
+  },
+  "keywords": [
+    "svelte",
+    "ssr",
+    "vite",
+    "typescript"
+  ],
+  "author": "Miqdad Abdurrahman Fawwaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miqdadfwz/svelte-vite-ssr/issues"
+  },
+  "homepage": "https://github.com/miqdadfwz/svelte-vite-ssr#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.30.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-svelte3": "^3.2.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.1",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5",
+    "vite": "^2.4.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "svelte": "^3.38.3"
+  }
+}
