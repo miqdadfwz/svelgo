@@ -1,17 +1,16 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'google',
-    'plugin:prettier/recommended',
-    'prettier',
-  ],
-  plugins: ['svelte3', '@typescript-eslint'],
+  extends: ['eslint:recommended', 'google', 'plugin:prettier/recommended', 'prettier'],
+  plugins: ['svelte3'],
   overrides: [
     {
       files: ['*.svelte'],
       processor: 'svelte3/svelte3',
+    },
+    {
+      files: ['*.ts'],
+      plugins: ['@typescript-eslint'],
+      extends: ['plugin:@typescript-eslint/eslint-recommended', 'plugin:@typescript-eslint/recommended'],
     },
   ],
   env: {
