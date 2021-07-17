@@ -4,6 +4,7 @@
   "description": "svelte boilerplate with ssr and type support",
   "main": "index.js",
   "scripts": {
+    "dev:client": "vite --port 3001",
     "lint": "eslint '*/**/*.{js,ts,tsx,svelte}' --quiet --fix",
     "husky:prepare": "husky install",
     "pre-commit": "lint-staged"
@@ -27,6 +28,8 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.12",
+    "@tsconfig/svelte": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
     "cz-conventional-changelog": "^3.3.0",
@@ -37,7 +40,11 @@
     "eslint-plugin-svelte3": "^3.2.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.0.1",
+    "postcss-load-config": "^3.1.0",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^2.3.2",
+    "prettier-plugin-svelte": "^2.3.1",
+    "svelte-preprocess": "^4.7.4",
     "typescript": "^4.3.5",
     "vite": "^2.4.2"
   },

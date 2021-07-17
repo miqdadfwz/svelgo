@@ -1,0 +1,13 @@
+{
+  "display": "Svelte",
+  "extends": "@tsconfig/svelte/tsconfig.json",
+  /**
+   * Use globals.d.ts instead of compilerOptions.types
+   * to avoid limiting type declarations.
+   */
+  "include": ["globals.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte"],
+  "exclude": ["node_modules/*", "public/*", "dist/*"],
+  "compilerOptions": {
+    "types": ["svelte"]
+  }
+}
