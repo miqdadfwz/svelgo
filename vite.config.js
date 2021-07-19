@@ -1,11 +1,12 @@
 import fs from 'fs';
 import { defineConfig } from 'vite';
 import { config } from 'dotenv-safe';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import sveltePreprocess from 'svelte-preprocess';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 
 export default () => {
-  const isDev = process.env.NODE_ENV === 'dev';
+  const isDev = process.env.NODE_ENV === 'development';
   const isSSR = process.env.SSR_MODE === '1';
   const { parsed } = config();
 
@@ -15,6 +16,9 @@ export default () => {
         key: fs.readFileSync(parsed.SSL_KEY),
         cert: fs.readFileSync(parsed.SSL_CERT),
       },
+    },
+    optimizeDeps: {
+      exclude: ['svelte'],
     },
     plugins: [
       svelte({
@@ -26,11 +30,17 @@ export default () => {
         },
         preprocess: [
           sveltePreprocess({
-            postcss: true,
+            sourceMap: isDev,
+            postcss: {
+              plugins: [require('tailwindcss')(), require('autoprefixer')()],
+            },
           }),
         ],
       }),
-      { enforce: 'pre' },
+      tsconfigPaths(),
     ],
+    define: {
+      __DEV__: isDev,
+    },
   });
 };

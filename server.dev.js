@@ -12,8 +12,27 @@ const { createServer: createViteServer } = require('vite');
 const { config } = require('dotenv-safe');
 const prettifier = require('pino-colada');
 
-const getHTML = () => {
-  return fs.readFileSync('index.html', 'utf-8');
+const postcss = require('postcss');
+const cssnano = require('cssnano');
+const tailwindcss = require('tailwindcss');
+const autoprefixer = require('autoprefixer');
+const purgecss = require('@fullhuman/postcss-purgecss');
+
+const getHTML = () => fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf-8');
+const getJS = () => `<script>window.SSR=true;</script>`;
+const genCSS = async () => {
+  const tailwindcssConfig = require('./tailwind.config');
+
+  return postcss([
+    autoprefixer,
+    tailwindcss(tailwindcssConfig),
+    purgecss({ ...tailwindcssConfig.purge }),
+    cssnano({
+      preset: 'default',
+    }),
+  ]).process(fs.readFileSync(path.resolve(__dirname, 'src/global.css'), 'utf-8'), {
+    from: path.resolve(__dirname, 'src/global.css'),
+  });
 };
 
 const createKoaServer = (callback) => {
@@ -59,14 +78,22 @@ const serve = async () => {
       const url = ctx.req.url;
       const { default: render } = await vite.ssrLoadModule(path.resolve(__dirname, 'src/server.ts'));
       const rendered = await render();
-      const head = `<style>${rendered.css.code}</style>`;
+
+      const { css } = await genCSS();
+      const js = getJS();
 
       const template = await vite.transformIndexHtml(url, getHTML());
-      const html = template.replace('<!--ssr-body-->', rendered.html).replace('<!--ssr-head-->', head);
+      const html = template
+        .replace('<!--ssr-body-->', rendered.html)
+        .replace('<!--ssr-head-->', rendered.head)
+        .replace('<!--ssr-script-->', js)
+        .replace('/* ssr-css */', css);
 
       ctx.res.statusCode = 200;
       ctx.res.setHeader('Content-Type', 'text/html');
       ctx.body = html;
+
+      next();
     } catch (error) {
       vite.ssrFixStacktrace(error);
       ctx.log.error(error);
@@ -81,7 +108,7 @@ const serve = async () => {
       process.exit(1);
     }
 
-    console.info(`> Server listening on https://localhost:${process.env.PORT}`);
+    console.info(`> Development server listening on https://localhost:${process.env.PORT}`);
   });
 };
 

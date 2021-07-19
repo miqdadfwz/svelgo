@@ -1,21 +1,16 @@
 import App from './App.svelte';
 
-interface RenderParams {
-  url: string;
-  template: string;
-}
-
 interface RenderReturn {
-  body: string;
-  url: string;
-  headers: Record<string, string>;
-  status: number;
+  html: string;
+  head: string;
+  css: {
+    code: string;
+    map: unknown;
+  };
 }
 
-const render = (renderParams: RenderParams): RenderReturn => {
-  return (App as any).render({
-    name: 'Stranger',
-  });
+const render = (): RenderReturn => {
+  return App['render']();
 };
 
 export default render;

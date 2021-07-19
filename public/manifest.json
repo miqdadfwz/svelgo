@@ -1,0 +1,10 @@
+{
+  "name": "LayoutIt Grid",
+  "short_name": "LayoutIt Grid",
+  "icons": [],
+  "start_url": "/index.html",
+  "background_color": "#ffffff",
+  "theme_color": "#ff3e00",
+  "description": "Yet antother Svelte + Vite boilerplate.",
+  "categories": ["boilerplate", "tools", "utilities"]
+}

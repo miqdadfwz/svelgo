@@ -8,6 +8,6 @@
   "include": ["globals.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte"],
   "exclude": ["node_modules/*", "public/*", "dist/*"],
   "compilerOptions": {
-    "types": ["svelte"]
+    "types": ["svelte", "vite/client"]
   }
 }
