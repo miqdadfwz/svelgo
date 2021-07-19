@@ -16,16 +16,12 @@ export default () => {
         cert: fs.readFileSync(parsed.SSL_CERT),
       },
     },
-    resolve: {
-      dedupe: ['svelte'],
-    },
-    optimizeDeps: {
-      exclude: ['svelte'],
-    },
     plugins: [
       svelte({
         hot: isDev,
+        emitCss: true,
         compilerOptions: {
+          dev: isDev,
           hydratable: isSSR,
         },
         preprocess: [
@@ -34,6 +30,7 @@ export default () => {
           }),
         ],
       }),
+      { enforce: 'pre' },
     ],
   });
 };

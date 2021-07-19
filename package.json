@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev:client": "vite --port 3001",
+    "dev:server": "SSR_MODE=1 PORT=3000 node server.dev.js",
     "lint": "eslint '*/**/*.{js,ts,tsx,svelte}' --quiet --fix",
     "husky:prepare": "husky install",
     "pre-commit": "lint-staged"
@@ -56,6 +57,14 @@
     }
   },
   "dependencies": {
+    "@koa/router": "^10.0.0",
+    "fastify": "^3.19.1",
+    "koa": "^2.13.1",
+    "koa-compress": "^5.0.1",
+    "koa-connect": "^2.1.0",
+    "koa-pino-logger": "^3.0.0",
+    "middie": "^5.3.0",
+    "pino-colada": "^2.1.0",
     "svelte": "^3.38.3"
   }
 }

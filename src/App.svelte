@@ -3,7 +3,7 @@
 </script>
 
 <main>
-  <h1>Hello {name || ''}! Welcome to svelgo</h1>
+  <h1>Hello {name || ''}! Welcome to svelgo!!</h1>
 </main>
 
 <style>
