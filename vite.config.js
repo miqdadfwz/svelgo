@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { readFileSync } from 'fs';
 import { defineConfig } from 'vite';
 import { config } from 'dotenv-safe';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -13,8 +13,8 @@ export default () => {
   return defineConfig({
     server: {
       https: {
-        key: fs.readFileSync(parsed.SSL_KEY),
-        cert: fs.readFileSync(parsed.SSL_CERT),
+        key: readFileSync(parsed.SSL_KEY),
+        cert: readFileSync(parsed.SSL_CERT),
       },
     },
     optimizeDeps: {

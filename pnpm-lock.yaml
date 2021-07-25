@@ -30,6 +30,7 @@ devDependencies:
   postcss-preset-env: 6.7.0
   prettier: 2.3.2
   prettier-plugin-svelte: 2.3.1_prettier@2.3.2+svelte@3.38.3
+  rollup: 2.53.2
   svelte-preprocess: 4.7.4_a5a18df0fd80b121f7e25f45162d169d
   tailwindcss: 2.2.4_d0cbdb03a6e75c60c9760f17c403e6d9
   typescript: 4.3.5
@@ -4949,6 +4950,7 @@ specifiers:
   postcss-preset-env: ^6.7.0
   prettier: ^2.3.2
   prettier-plugin-svelte: ^2.3.1
+  rollup: ^2.53.2
   svelte: ^3.38.3
   svelte-preprocess: ^4.7.4
   tailwindcss: ^2.2.4
