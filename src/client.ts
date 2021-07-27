@@ -3,7 +3,9 @@ import App from './App.svelte';
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').then(() => {
-      console.log('Service Worker registration completed.');
+      if (window['__DEV__']) {
+        console.log('[sw] service Worker registration completed.');
+      }
     });
   });
 }
