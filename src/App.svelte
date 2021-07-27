@@ -19,7 +19,7 @@
         </a>
         <span>|</span>
         <a class="hover:underline" href="https://github.com/miqdadfwz/svelgo" target="_blank" rel="noopener noreferrer">
-          Contribute
+          Documentation
         </a>
       </div>
     </div>

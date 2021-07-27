@@ -10,7 +10,7 @@ describe('src/App.svelte', () => {
     expect(getByText('Learn Svelte')).toBeVisible();
     expect(getByText('Learn Svelte')).toHaveAttribute('href', 'https://svelte.dev/tutorial');
 
-    expect(getByText('Contribute')).toBeVisible();
-    expect(getByText('Contribute')).toHaveAttribute('href', 'https://github.com/miqdadfwz/svelgo');
+    expect(getByText('Documentation')).toBeVisible();
+    expect(getByText('Documentation')).toHaveAttribute('href', 'https://github.com/miqdadfwz/svelgo');
   });
 });
