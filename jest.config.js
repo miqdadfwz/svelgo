@@ -4,7 +4,7 @@ module.exports = {
   testPathIgnorePatterns: ['./node_modules/'],
   testEnvironment: 'jsdom',
   moduleNameMapper: {
-    '\\.(css|sass)$': '<rootDir>/__mocks__/styles.mock.js',
+    '\\.(css|sass)$': '<rootDir>/src/__mocks__/styles.mock.js',
   },
   transform: {
     '^.+\\.svelte$': [
