@@ -1,5 +1,5 @@
 {
-  "name": "svelte-vite-ssr",
+  "name": "svelgo",
   "version": "0.0.1",
   "description": "svelte boilerplate with ssr and type support",
   "main": "index.js",
@@ -9,6 +9,7 @@
     "build:client": "vite build --emptyOutDir --outDir dist",
     "build:server": "SSR_MODE=1 vite build --emptyOutDir --outDir dist/server --ssr src/server.prod.ts",
     "build": "rimraf dist && pnpm run build:client && pnpm run build:server",
+    "start:client": "vite preview ./ --port 3001",
     "start:server": "PORT=3000 node dist/server/server.prod.js",
     "lint": "eslint '*/**/*.{js,ts,tsx,svelte}' --quiet --fix",
     "husky:prepare": "husky install",
@@ -17,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/miqdadfwz/svelte-vite-ssr.git"
+    "url": "git+https://github.com/miqdadfwz/svelgo.git"
   },
   "keywords": [
     "svelte",
@@ -28,9 +29,9 @@
   "author": "Miqdad Abdurrahman Fawwaz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/miqdadfwz/svelte-vite-ssr/issues"
+    "url": "https://github.com/miqdadfwz/svelgo/issues"
   },
-  "homepage": "https://github.com/miqdadfwz/svelte-vite-ssr#readme",
+  "homepage": "https://github.com/miqdadfwz/svelgo#readme",
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
