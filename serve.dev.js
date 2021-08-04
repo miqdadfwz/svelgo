@@ -26,7 +26,7 @@ const genCSS = async () => {
   return postcss([
     autoprefixer,
     tailwindcss(tailwindcssConfig),
-    purgecss({ ...tailwindcssConfig.purge }),
+    purgecss({ ...tailwindcssConfig.purge, enabled: true }),
     cssnano({
       preset: 'default',
     }),
@@ -76,7 +76,7 @@ const serve = async () => {
   app.use(async (ctx, next) => {
     try {
       const url = ctx.req.url;
-      const { default: render } = await vite.ssrLoadModule(path.resolve(__dirname, 'src/server.ts'));
+      const { default: render } = await vite.ssrLoadModule(path.resolve(__dirname, 'src/server.serve.ts'));
       const rendered = await render();
 
       const { css } = await genCSS();

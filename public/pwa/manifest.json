@@ -8,6 +8,11 @@
   "theme_color": "#ff3e00",
   "icons": [
     {
+      "src": "/client/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
       "src": "/icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png"

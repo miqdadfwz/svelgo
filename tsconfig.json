@@ -8,6 +8,6 @@
   "include": ["globals.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "./jest-setup.ts"],
   "exclude": ["node_modules/*", "public/*", "dist/*"],
   "compilerOptions": {
-    "types": ["svelte", "vite/client", "jest", "@testing-library/jest-dom"]
+    "types": ["svelte", "vite/client", "node", "jest", "@testing-library/jest-dom"]
   }
 }

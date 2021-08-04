@@ -11,6 +11,10 @@ export default () => {
   const { parsed } = config();
 
   return defineConfig({
+    build: {
+      manifest: true,
+      sourcemap: isDev,
+    },
     server: {
       https: {
         key: readFileSync(parsed.SSL_KEY),
@@ -23,7 +27,6 @@ export default () => {
     plugins: [
       svelte({
         hot: isDev,
-        emitCss: true,
         compilerOptions: {
           dev: isDev,
           hydratable: isSSR,

@@ -1,9 +1,12 @@
 dependencies:
   '@koa/router': 10.0.0
+  app-root-dir: 1.0.2
   koa: 2.13.1
   koa-compress: 5.0.1
   koa-connect: 2.1.0
+  koa-mount: 4.0.0
   koa-pino-logger: 3.0.0
+  koa-static: 5.0.0
   pino-colada: 2.1.0
   svelte: 3.38.3
 devDependencies:
@@ -14,7 +17,18 @@ devDependencies:
   '@testing-library/jest-dom': 5.14.1
   '@testing-library/svelte': 3.0.3_svelte@3.38.3
   '@tsconfig/svelte': 2.0.1
+  '@types/app-root-dir': 0.1.0
+  '@types/cssnano': 4.0.1
+  '@types/dotenv-safe': 8.1.2
   '@types/jest': 26.0.24
+  '@types/koa': 2.13.4
+  '@types/koa-compress': 4.0.3
+  '@types/koa-mount': 4.0.0
+  '@types/koa-pino-logger': 3.0.0
+  '@types/koa-static': 4.0.2
+  '@types/koa__router': 8.0.7
+  '@types/node': 16.4.3
+  '@types/tailwindcss': 2.2.1
   '@types/testing-library__jest-dom': 5.14.1
   '@typescript-eslint/eslint-plugin': 4.28.3_8da3816a7c3fb8ebc9f4c4b3e4b2e38f
   '@typescript-eslint/parser': 4.28.3_eslint@7.30.0+typescript@4.3.5
@@ -35,6 +49,7 @@ devDependencies:
   postcss-preset-env: 6.7.0
   prettier: 2.3.2
   prettier-plugin-svelte: 2.3.1_prettier@2.3.2+svelte@3.38.3
+  rimraf: 3.0.2
   rollup: 2.53.2
   svelte-jester: 1.7.0_jest@27.0.6+svelte@3.38.3
   svelte-preprocess: 4.7.4_a5a18df0fd80b121f7e25f45162d169d
@@ -985,6 +1000,16 @@ packages:
     dev: true
     resolution:
       integrity: sha512-aqkICXbM1oX5FfgZd2qSSAGdyo/NRxjWCamxoyi3T8iVQnzGge19HhDYzZ6NrVOW7bhcWNSq9XexWFtMzbB24A==
+  /@types/accepts/1.3.5:
+    dependencies:
+      '@types/node': 16.4.3
+    dev: true
+    resolution:
+      integrity: sha512-jOdnI/3qTpHABjM5cx1Hc0sKsPoYCp+DP/GJRGtDlPd7fiV9oXGGIcjW/ZOxLIvjGz8MA+uMZI9metHlgqbgwQ==
+  /@types/app-root-dir/0.1.0:
+    dev: true
+    resolution:
+      integrity: sha512-hL5zdUZ6OZE2DQ38CTxvcTIPYT8YXQE5wq3cs4EWf6NTL+HbyD+9yKeta6qNTuYS68JfqSVgTpwPwoBEhNZLIA==
   /@types/aria-query/4.2.2:
     dev: true
     resolution:
@@ -1018,12 +1043,75 @@ packages:
     dev: true
     resolution:
       integrity: sha512-K2waXdXBi2302XUdcHcR1jCeU0LL4TD9HRs/gk0N2Xvrht+G/BfJa4QObBQZfhMdxiCpV3COl5Nfq4uKTeTnJA==
+  /@types/body-parser/1.19.1:
+    dependencies:
+      '@types/connect': 3.4.35
+      '@types/node': 16.4.3
+    dev: true
+    resolution:
+      integrity: sha512-a6bTJ21vFOGIkwM0kzh9Yr89ziVxq4vYH2fQ6N8AeipEzai/cFK6aGMArIkUeIdRIgpwQa+2bXiLuUJCpSf2Cg==
+  /@types/connect/3.4.35:
+    dependencies:
+      '@types/node': 16.4.3
+    dev: true
+    resolution:
+      integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==
+  /@types/content-disposition/0.5.4:
+    dev: true
+    resolution:
+      integrity: sha512-0mPF08jn9zYI0n0Q/Pnz7C4kThdSt+6LD4amsrYDDpgBfrVWa3TcCOxKX1zkGgYniGagRv8heN2cbh+CAn+uuQ==
+  /@types/cookies/0.7.7:
+    dependencies:
+      '@types/connect': 3.4.35
+      '@types/express': 4.17.13
+      '@types/keygrip': 1.0.2
+      '@types/node': 16.4.3
+    dev: true
+    resolution:
+      integrity: sha512-h7BcvPUogWbKCzBR2lY4oqaZbO3jXZksexYJVFvkrFeLgbZjQkU4x8pRq6eg2MHXQhY0McQdqmmsxRWlVAHooA==
+  /@types/cssnano/4.0.1:
+    dependencies:
+      postcss: 7.0.36
+    dev: true
+    resolution:
+      integrity: sha512-hGOroxRTBkYl5gSBRJOffhV4+io+Y2bFX1VP7LgKEVHJt/LPPJaWUIuDAz74Vlp7l7hCDZfaDi7iPxwNwuVA4Q==
+  /@types/dotenv-safe/8.1.2:
+    dependencies:
+      dotenv: 8.6.0
+    dev: true
+    resolution:
+      integrity: sha512-R/B/wIMda6lRE2P1H0vwSoJsV78IOkhccE4vIvmKZQNXOIjiU0QyJsUXwSotBxOPZFZ/oOnjCa3+kK5kVJwGyw==
+  /@types/express-serve-static-core/4.17.24:
+    dependencies:
+      '@types/node': 16.4.3
+      '@types/qs': 6.9.7
+      '@types/range-parser': 1.2.4
+    dev: true
+    resolution:
+      integrity: sha512-3UJuW+Qxhzwjq3xhwXm2onQcFHn76frIYVbTu+kn24LFxI+dEhdfISDFovPB8VpEgW8oQCTpRuCe+0zJxB7NEA==
+  /@types/express/4.17.13:
+    dependencies:
+      '@types/body-parser': 1.19.1
+      '@types/express-serve-static-core': 4.17.24
+      '@types/qs': 6.9.7
+      '@types/serve-static': 1.13.10
+    dev: true
+    resolution:
+      integrity: sha512-6bSZTPaTIACxn48l50SR+axgrqm6qXFIxrdAKaG6PaJk3+zuUr35hBlgT7vOmJcum+OEaIBLtHV/qloEAFITeA==
   /@types/graceful-fs/4.1.5:
     dependencies:
       '@types/node': 16.4.3
     dev: true
     resolution:
       integrity: sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==
+  /@types/http-assert/1.5.1:
+    dev: true
+    resolution:
+      integrity: sha512-PGAK759pxyfXE78NbKxyfRcWYA/KwW17X290cNev/qAsn9eQIxkH4shoNBafH37wewhDG/0p1cHPbK6+SzZjWQ==
+  /@types/http-errors/1.8.1:
+    dev: true
+    resolution:
+      integrity: sha512-e+2rjEwK6KDaNOm5Aa9wNGgyS9oSZU/4pfSMMPYNOfjvFI0WVXm29+ITRFr6aKDvvKo7uU1jV68MW4ScsfDi7Q==
   /@types/istanbul-lib-coverage/2.0.3:
     dev: true
     resolution:
@@ -1051,6 +1139,73 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YSBPTLTVm2e2OoQIDYx8HaeWJ5tTToLH67kXR7zYNGupXMEHa2++G8k+DczX2cFVgalypqtyZIcU19AFcmOpmg==
+  /@types/keygrip/1.0.2:
+    dev: true
+    resolution:
+      integrity: sha512-GJhpTepz2udxGexqos8wgaBx4I/zWIDPh/KOGEwAqtuGDkOUJu5eFvwmdBX4AmB8Odsr+9pHCQqiAqDL/yKMKw==
+  /@types/koa-compose/3.2.5:
+    dependencies:
+      '@types/koa': 2.13.4
+    dev: true
+    resolution:
+      integrity: sha512-B8nG/OoE1ORZqCkBVsup/AKcvjdgoHnfi4pZMn5UwAPCbhk/96xyv284eBYW8JlQbQ7zDmnpFr68I/40mFoIBQ==
+  /@types/koa-compress/4.0.3:
+    dependencies:
+      '@types/koa': 2.13.4
+      '@types/node': 16.4.3
+    dev: true
+    resolution:
+      integrity: sha512-nJSII/tOSvYCwk3yDEBJLHd8ctkt5CQFZ0j8ZBnHZ2x0hg24z9H1i38lWXA/5z0Ix0uitMW1jov+kVbQI1aNPQ==
+  /@types/koa-mount/4.0.0:
+    dependencies:
+      '@types/koa': 2.13.4
+    dev: true
+    resolution:
+      integrity: sha512-56iBULArwY3uKLl28eRFchZ2v0diEoJzJbDaHH/ehgruF/s2/KMHyWsKcIhvDJ3tGdKu9oZNQvxaMg++1IKFdA==
+  /@types/koa-pino-logger/3.0.0:
+    dependencies:
+      '@types/koa': 2.13.4
+      '@types/pino': 6.3.10
+      '@types/pino-http': 5.4.2
+    dev: true
+    resolution:
+      integrity: sha512-sP+12JNX01q+nHpCRqkVIuLjaRemQEfDoFg0evpTnjUEI3jUI2ZrOkhQ5coxn3yVm2tedui/2YhlaPn/XrYNWA==
+  /@types/koa-send/4.1.3:
+    dependencies:
+      '@types/koa': 2.13.4
+    dev: true
+    resolution:
+      integrity: sha512-daaTqPZlgjIJycSTNjKpHYuKhXYP30atFc1pBcy6HHqB9+vcymDgYTguPdx9tO4HMOqNyz6bz/zqpxt5eLR+VA==
+  /@types/koa-static/4.0.2:
+    dependencies:
+      '@types/koa': 2.13.4
+      '@types/koa-send': 4.1.3
+    dev: true
+    resolution:
+      integrity: sha512-ns/zHg+K6XVPMuohjpOlpkR1WLa4VJ9czgUP9bxkCDn0JZBtUWbD/wKDZzPGDclkQK1bpAEScufCHOy8cbfL0w==
+  /@types/koa/2.13.4:
+    dependencies:
+      '@types/accepts': 1.3.5
+      '@types/content-disposition': 0.5.4
+      '@types/cookies': 0.7.7
+      '@types/http-assert': 1.5.1
+      '@types/http-errors': 1.8.1
+      '@types/keygrip': 1.0.2
+      '@types/koa-compose': 3.2.5
+      '@types/node': 16.4.3
+    dev: true
+    resolution:
+      integrity: sha512-dfHYMfU+z/vKtQB7NUrthdAEiSvnLebvBjwHtfFmpZmB7em2N3WVQdHgnFq+xvyVgxW5jKDmjWfLD3lw4g4uTw==
+  /@types/koa__router/8.0.7:
+    dependencies:
+      '@types/koa': 2.13.4
+    dev: true
+    resolution:
+      integrity: sha512-OB3Ax75nmTP+WR9AgdzA42DI7YmBtiNKN2g1Wxl+d5Dyek9SWt740t+ukwXSmv/jMBCUPyV3YEI93vZHgdP7UQ==
+  /@types/mime/1.3.2:
+    dev: true
+    resolution:
+      integrity: sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==
   /@types/minimist/1.2.2:
     dev: true
     resolution:
@@ -1075,6 +1230,33 @@ packages:
     dev: true
     resolution:
       integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
+  /@types/pino-http/5.4.2:
+    dependencies:
+      '@types/pino': 6.3.10
+    dev: true
+    resolution:
+      integrity: sha512-bHEWyfaLUcUzk1axkfx/L6Xvi8Ip/dQ3Skpe6FDrdPl1SAsL4+gWcolpGNmmpO1ZsGTqB10EUYl4PXIgGeSKWA==
+  /@types/pino-pretty/4.7.1:
+    dependencies:
+      '@types/pino': 6.3.10
+    dev: true
+    resolution:
+      integrity: sha512-l1ntNXdpVWsnPYUk5HyO5Lxfr38zLCgxVfEn/9Zhhm+nGF04/BiIou/m8XPwvoVZLV+livUo79VdHXMJPfUYxA==
+  /@types/pino-std-serializers/2.4.1:
+    dependencies:
+      '@types/node': 16.4.3
+    dev: true
+    resolution:
+      integrity: sha512-17XcksO47M24IVTVKPeAByWUd3Oez7EbIjXpSbzMPhXVzgjGtrOa49gKBwxH9hb8dKv58OelsWQ+A1G1l9S3wQ==
+  /@types/pino/6.3.10:
+    dependencies:
+      '@types/node': 16.4.3
+      '@types/pino-pretty': 4.7.1
+      '@types/pino-std-serializers': 2.4.1
+      '@types/sonic-boom': 0.7.0
+    dev: true
+    resolution:
+      integrity: sha512-r2ZOSQmjDGDEus+mif6Aym7cKQdgATv6P09iBwxlh9UdTWHUzHWbr8HxC0fwqYjAicfe2UzP+ahjm1KdbwA4GA==
   /@types/prettier/2.3.2:
     dev: true
     resolution:
@@ -1083,16 +1265,41 @@ packages:
     dev: true
     resolution:
       integrity: sha512-LOnASQoeNZMkzexRuyqcBBDZ6rS+rQxUMkmj5A0PkhhiSZivLIuz6Hxyr1mkGoEZEkk66faROmpMi4fFkrKsBA==
+  /@types/qs/6.9.7:
+    dev: true
+    resolution:
+      integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==
+  /@types/range-parser/1.2.4:
+    dev: true
+    resolution:
+      integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
   /@types/sass/1.16.1:
     dependencies:
       '@types/node': 16.3.3
     dev: true
     resolution:
       integrity: sha512-iZUcRrGuz/Tbg3loODpW7vrQJkUtpY2fFSf4ELqqkApcS2TkZ1msk7ie8iZPB86lDOP8QOTTmuvWjc5S0R9OjQ==
+  /@types/serve-static/1.13.10:
+    dependencies:
+      '@types/mime': 1.3.2
+      '@types/node': 16.4.3
+    dev: true
+    resolution:
+      integrity: sha512-nCkHGI4w7ZgAdNkrEu0bv+4xNV/XDqW+DydknebMOQwkpDGx8G+HTlj7R7ABI8i8nKxVw0wtKPi1D+lPOkh4YQ==
+  /@types/sonic-boom/0.7.0:
+    dependencies:
+      '@types/node': 16.4.3
+    dev: true
+    resolution:
+      integrity: sha512-AfqR0fZMoUXUNwusgXKxcE9DPlHNDHQp6nKYUd4PSRpLobF5CCevSpyTEBcVZreqaWKCnGBr9KI1fHMTttoB7A==
   /@types/stack-utils/2.0.1:
     dev: true
     resolution:
       integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==
+  /@types/tailwindcss/2.2.1:
+    dev: true
+    resolution:
+      integrity: sha512-raLwtQF+uul9lsvs7+GUizeNrpxRqbnckIu/va5hzPPwZsImZunkyLFAS/1rwEHhhvFMNiMJmTiP5PPGa0oNJA==
   /@types/testing-library__jest-dom/5.14.1:
     dependencies:
       '@types/jest': 26.0.24
@@ -1394,6 +1601,10 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-P43ePfOAIupkguHUycrc4qJ9kz8ZiuOUijaETwX7THt0Y/GNK7v0aa8rY816xWjZ7rJdA5XdMcpVFTKMq+RvWg==
+  /app-root-dir/1.0.2:
+    dev: false
+    resolution:
+      integrity: sha1-OBh+wt6nV3//Az/8sSFyaS/24Rg=
   /arg/5.0.0:
     dev: true
     resolution:
@@ -2247,6 +2458,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
+  /debug/3.2.7:
+    dependencies:
+      ms: 2.1.3
+    dev: false
+    resolution:
+      integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==
   /debug/4.3.2:
     dependencies:
       ms: 2.1.2
@@ -3247,6 +3464,17 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-rdw7q6GTlibqVVbXr0CKelfV5iY8G2HqEUkhSk297BMbSpSL8crXC+9rjKoMcZZEsksX30le6f/4ul4E28gegw==
+  /http-errors/1.6.3:
+    dependencies:
+      depd: 1.1.2
+      inherits: 2.0.3
+      setprototypeof: 1.1.0
+      statuses: 1.5.0
+    dev: false
+    engines:
+      node: '>= 0.6'
+    resolution:
+      integrity: sha1-i1VoC7S+KDoLW/TqLjhYC+HZMg0=
   /http-errors/1.7.3:
     dependencies:
       depd: 1.1.2
@@ -3381,6 +3609,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-Sb1jMdfQLQwJvJEKEHW6gWW1bfk=
+  /inherits/2.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
   /inherits/2.0.4:
     resolution:
       integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
@@ -4263,12 +4495,40 @@ packages:
     dev: false
     resolution:
       integrity: sha1-JzwH7c3Ljfaiwat9We52SRRR7BQ=
+  /koa-mount/4.0.0:
+    dependencies:
+      debug: 4.3.2
+      koa-compose: 4.1.0
+    dev: false
+    engines:
+      node: '>= 7.6.0'
+    resolution:
+      integrity: sha512-rm71jaA/P+6HeCpoRhmCv8KVBIi0tfGuO/dMKicbQnQW/YJntJ6MnnspkodoA4QstMVEZArsCphmd0bJEtoMjQ==
   /koa-pino-logger/3.0.0:
     dependencies:
       pino-http: 5.5.0
     dev: false
     resolution:
       integrity: sha512-teJsT88JLRBYH7pJACGAwAHfl2y/x5u5aSPD03Z/HW6QDMAWyRxk4dsY0/UbtM8wgaXIaxZgIFUxxvgiQFr6WQ==
+  /koa-send/5.0.1:
+    dependencies:
+      debug: 4.3.2
+      http-errors: 1.8.0
+      resolve-path: 1.4.0
+    dev: false
+    engines:
+      node: '>= 8'
+    resolution:
+      integrity: sha512-tmcyQ/wXXuxpDxyNXv5yNNkdAMdFRqwtegBXUaowiQzUKqJehttS0x2j0eOZDQAyloAth5w6wwBImnFzkUz3pQ==
+  /koa-static/5.0.0:
+    dependencies:
+      debug: 3.2.7
+      koa-send: 5.0.1
+    dev: false
+    engines:
+      node: '>= 7.6.0'
+    resolution:
+      integrity: sha512-UqyYyH5YEXaJrf9S8E23GoJFQZXkBVJ9zYYMPGz919MSX1KuvAcycIuS0ci150HCoPf4XQVhQ84Qf8xRPWxFaQ==
   /koa/2.13.1:
     dependencies:
       accepts: 1.3.7
@@ -4625,6 +4885,10 @@ packages:
   /ms/2.1.2:
     resolution:
       integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
+  /ms/2.1.3:
+    dev: false
+    resolution:
+      integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
   /mute-stream/0.0.7:
     dev: true
     resolution:
@@ -4914,7 +5178,6 @@ packages:
     resolution:
       integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==
   /path-is-absolute/1.0.1:
-    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -5980,6 +6243,15 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-zFa12V4OLtT5XUX/Q4VLvTfBf+Ok0SPc1FNGM/z9ctUdiU618qwKpWnd0CHs3+RqROfyEg/DhuHbMWYqcgljEw==
+  /resolve-path/1.4.0:
+    dependencies:
+      http-errors: 1.6.3
+      path-is-absolute: 1.0.1
+    dev: false
+    engines:
+      node: '>= 0.8'
+    resolution:
+      integrity: sha1-xL2p9e+y/OZSR4c6s2u02DT+Fvc=
   /resolve/1.20.0:
     dependencies:
       is-core-module: 2.5.0
@@ -6097,6 +6369,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==
+  /setprototypeof/1.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-BvE/TwpZX4FXExxOxZyRGQQv651MSwmWKZGqvmPcRIjDqWub67kTKuIMx43cZZrS/cBBzwBcNDWoFxt2XEFIpQ==
   /setprototypeof/1.1.1:
     dev: false
     resolution:
@@ -7111,10 +7387,22 @@ specifiers:
   '@testing-library/jest-dom': ^5.14.1
   '@testing-library/svelte': ^3.0.3
   '@tsconfig/svelte': ^2.0.1
+  '@types/app-root-dir': ^0.1.0
+  '@types/cssnano': ^4.0.1
+  '@types/dotenv-safe': ^8.1.2
   '@types/jest': ^26.0.24
+  '@types/koa': ^2.13.4
+  '@types/koa-compress': ^4.0.3
+  '@types/koa-mount': ^4.0.0
+  '@types/koa-pino-logger': ^3.0.0
+  '@types/koa-static': ^4.0.2
+  '@types/koa__router': ^8.0.7
+  '@types/node': ^16.4.3
+  '@types/tailwindcss': ^2.2.1
   '@types/testing-library__jest-dom': ^5.14.1
   '@typescript-eslint/eslint-plugin': ^4.28.3
   '@typescript-eslint/parser': ^4.28.3
+  app-root-dir: ^1.0.2
   autoprefixer: ^10.3.1
   cssnano: ^5.0.6
   cz-conventional-changelog: ^3.3.0
@@ -7129,7 +7417,9 @@ specifiers:
   koa: ^2.13.1
   koa-compress: ^5.0.1
   koa-connect: ^2.1.0
+  koa-mount: ^4.0.0
   koa-pino-logger: ^3.0.0
+  koa-static: ^5.0.0
   lint-staged: ^11.0.1
   pino-colada: ^2.1.0
   postcss: ^8.2.8
@@ -7137,6 +7427,7 @@ specifiers:
   postcss-preset-env: ^6.7.0
   prettier: ^2.3.2
   prettier-plugin-svelte: ^2.3.1
+  rimraf: ^3.0.2
   rollup: ^2.53.2
   svelte: ^3.38.3
   svelte-jester: ^1.7.0
