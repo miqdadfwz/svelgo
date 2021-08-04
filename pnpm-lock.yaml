@@ -34,8 +34,10 @@ devDependencies:
   '@typescript-eslint/parser': 4.28.3_eslint@7.30.0+typescript@4.3.5
   autoprefixer: 10.3.1_postcss@8.3.5
   cssnano: 5.0.6_postcss@8.3.5
+  cssnano-preset-lite: 2.0.1_postcss@8.3.5
   cz-conventional-changelog: 3.3.0
   dotenv-safe: 8.2.0
+  esbuild-register: 2.6.0
   eslint: 7.30.0
   eslint-config-google: 0.14.0_eslint@7.30.0
   eslint-config-prettier: 8.3.0_eslint@7.30.0
@@ -2359,6 +2361,20 @@ packages:
       postcss: ^8.2.15
     resolution:
       integrity: sha512-qo9tX+t4yAAZ/yagVV3b+QBKeLklQbmgR3wI7mccrDcR+bEk9iHgZN1E7doX68y9ThznLya3RDmR+nc7l6/2WQ==
+  /cssnano-preset-lite/2.0.1_postcss@8.3.5:
+    dependencies:
+      cssnano-utils: 2.0.1_postcss@8.3.5
+      postcss: 8.3.5
+      postcss-discard-comments: 5.0.1_postcss@8.3.5
+      postcss-discard-empty: 5.0.1_postcss@8.3.5
+      postcss-normalize-whitespace: 5.0.1_postcss@8.3.5
+    dev: true
+    engines:
+      node: ^10 || ^12 || >=14.0
+    peerDependencies:
+      postcss: ^8.2.15
+    resolution:
+      integrity: sha512-PDLB+Zm/Sj3bOmkd471bfN2JAlXBOJAQ+r1GrWjlODdaQyMLJCqPRTvGbqSLbbfMKNsOCG/8SKryZnsSlA9zCA==
   /cssnano-utils/2.0.1_postcss@8.3.5:
     dependencies:
       postcss: 8.3.5
@@ -2722,12 +2738,25 @@ packages:
     dev: true
     resolution:
       integrity: sha512-7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==
+  /esbuild-register/2.6.0:
+    dependencies:
+      esbuild: 0.12.17
+      jsonc-parser: 3.0.0
+    dev: true
+    resolution:
+      integrity: sha512-2u4AtnCXP5nivtIxZryiZOUcEQkOzFS7UhAqibUEmaTAThJ48gDLYTBF/Fsz+5r0hbV1jrFE6PQvPDUrKZNt/Q==
   /esbuild/0.12.15:
     dev: true
     hasBin: true
     requiresBuild: true
     resolution:
       integrity: sha512-72V4JNd2+48eOVCXx49xoSWHgC3/cCy96e7mbXKY+WOWghN00cCmlGnwVLRhRHorvv0dgCyuMYBZlM2xDM5OQw==
+  /esbuild/0.12.17:
+    dev: true
+    hasBin: true
+    requiresBuild: true
+    resolution:
+      integrity: sha512-GshKJyVYUnlSXIZj/NheC2O0Kblh42CS7P1wJyTbbIHevTG4jYMS9NNw8EOd8dDWD0dzydYHS01MpZoUcQXB4g==
   /escalade/3.1.1:
     dev: true
     engines:
@@ -4410,6 +4439,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-f+8cldu7X/y7RAJurMEJmdoKXGB/X550w2Nr3tTbezL6RwEE/iMcm+tZnXeoZtKuOq6ft8+CqzEkrIgx1fPoQA==
+  /jsonc-parser/3.0.0:
+    dev: true
+    resolution:
+      integrity: sha512-fQzRfAbIBnR0IQvftw9FJveWiHp72Fg20giDrHz6TdfB12UH/uue0D3hm57UB5KgAVuniLMCaS8P1IMj9NR7cA==
   /jsonfile/4.0.0:
     dev: true
     optionalDependencies:
@@ -7405,8 +7438,10 @@ specifiers:
   app-root-dir: ^1.0.2
   autoprefixer: ^10.3.1
   cssnano: ^5.0.6
+  cssnano-preset-lite: ^2.0.1
   cz-conventional-changelog: ^3.3.0
   dotenv-safe: ^8.2.0
+  esbuild-register: ^2.6.0
   eslint: ^7.30.0
   eslint-config-google: ^0.14.0
   eslint-config-prettier: ^8.3.0

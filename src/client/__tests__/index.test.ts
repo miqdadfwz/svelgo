@@ -1,4 +1,4 @@
-import client from '../client';
+import client from '..';
 import App from '../App.svelte';
 
 describe('src/client.ts', () => {

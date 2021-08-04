@@ -29,7 +29,8 @@ export default () => {
         hot: isDev,
         compilerOptions: {
           dev: isDev,
-          hydratable: isSSR,
+          hydratable: !isSSR,
+          generate: isSSR ? 'ssr' : 'dom',
         },
         preprocess: [
           sveltePreprocess({

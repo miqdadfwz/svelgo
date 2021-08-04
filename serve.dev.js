@@ -14,6 +14,7 @@ const prettifier = require('pino-colada');
 
 const postcss = require('postcss');
 const cssnano = require('cssnano');
+const litePreset = require('cssnano-preset-lite');
 const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
 const purgecss = require('@fullhuman/postcss-purgecss');
@@ -22,16 +23,17 @@ const getHTML = () => fs.readFileSync(path.resolve(__dirname, 'index.html'), 'ut
 const getJS = () => `<script>window.SSR=true;</script>`;
 const genCSS = async () => {
   const tailwindcssConfig = require('./tailwind.config');
+  const preset = litePreset({ discardComments: false });
 
   return postcss([
     autoprefixer,
     tailwindcss(tailwindcssConfig),
-    purgecss({ ...tailwindcssConfig.purge, enabled: true }),
     cssnano({
-      preset: 'default',
+      preset,
     }),
-  ]).process(fs.readFileSync(path.resolve(__dirname, 'src/global.css'), 'utf-8'), {
-    from: path.resolve(__dirname, 'src/global.css'),
+    purgecss({ ...tailwindcssConfig.purge, enabled: true }),
+  ]).process(fs.readFileSync(path.resolve(__dirname, 'src/client/global.css'), 'utf-8'), {
+    from: path.resolve(__dirname, 'src/client/global.css'),
   });
 };
 
@@ -49,6 +51,7 @@ const createKoaServer = (callback) => {
     return httpsServer;
   } catch (error) {
     console.error('Faild to start HTTPS server\n', error, error && error.stack);
+    process.exit(1);
   }
 };
 
@@ -76,7 +79,7 @@ const serve = async () => {
   app.use(async (ctx, next) => {
     try {
       const url = ctx.req.url;
-      const { default: render } = await vite.ssrLoadModule(path.resolve(__dirname, 'src/server.serve.ts'));
+      const { default: render } = await vite.ssrLoadModule(path.resolve(__dirname, 'src/server/index.ts'));
       const rendered = await render();
 
       const { css } = await genCSS();
@@ -102,12 +105,7 @@ const serve = async () => {
     }
   });
 
-  server.listen(process.env.PORT, (err) => {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-
+  server.listen(process.env.PORT, () => {
     console.info(`> Development server listening on https://localhost:${process.env.PORT}`);
   });
 };

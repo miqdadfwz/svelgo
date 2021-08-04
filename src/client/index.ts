@@ -4,7 +4,7 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js').then(() => {
       if (window['__DEV__']) {
-        console.log('[sw] service Worker registration completed.');
+        console.log('[sw] service worker registration completed.');
       }
     });
   });
