@@ -1,6 +1,6 @@
 {
   "name": "svelgo",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "svelte boilerplate with ssr and type support",
   "main": "index.js",
   "scripts": {
