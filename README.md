@@ -49,14 +49,16 @@ npm run test --coverage
 ## Features
 ### Vite
 Vite is an opinionated lightning-fast web build tool. With minimum configuration, vite provides fast development experience because it leverages native ES modules and doesn’t need to rebuild the whole bundle when something changes. For the compilation, Vite is using esbuild to transpile TypeScript which significantly faster than `tsc`.
-### Progressive Web App (PWA)
+### Workbox
 SvelGo! is enhanced with modern PWA APIs to deliver improved capabilities along with reliability and installability on any device. You can get benefits from PWA features (offline UI, client caching, etc) thanks to [Workbox](https://developers.google.com/web/tools/workbox).
 ### TypeScript
 This project is built on TypeScript with the intention of improving the developer experience and secure development.
 ### TailwindCSS
 Utility-first modern CSS framework for rapidly building custom user interfaces, it lets you easily get started styling your website or application. No runtime cost needed.
 ### Koa
-
+Light node.js fremework to utilize SSR support.
+### svelte-testing-library
+Along with Jest, svelte-testing-library provide simple API to render svelte component in test by avoiding implementation details.
 
 ## Project Structure
 ```bash
