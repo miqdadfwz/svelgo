@@ -1,4 +1,5 @@
 <img width="138" alt="Screen Shot 2021-08-05 at 17 51 33" src="https://user-images.githubusercontent.com/43945767/128338446-0e8e345f-4de5-43bb-8da7-b9984ab6c676.png">
+
 > Svelte baseline with pre-configured rich environment. Set up with simple command and you're set to Go!
 
 ## Getting Started
