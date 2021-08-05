@@ -127,4 +127,4 @@ Issues should be used to report problems with the library, request a new feature
 If you find an Issue that addresses the problem you're having, please add your own reproduction information to the existing issue rather than creating a new one. Adding a reaction can also help be indicating to our maintainers that a particular problem is affecting more than just the reporter.
 
 ## License
-MIT 
+[MIT](https://github.com/miqdadfwz/svelgo/blob/master/LICENSE) 
