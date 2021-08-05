@@ -2,6 +2,8 @@
 
 > Svelte baseline with pre-configured rich environment. Set up with simple command and you're set to Go!
 
+![Test CI](https://github.com/miqdadfwz/svelgo/actions/workflows/test.yml/badge.svg)
+
 [Getting Started](https://github.com/miqdadfwz/svelgo#getting-started) | [Features](https://github.com/miqdadfwz/svelgo#features) | [Project Strucure](https://github.com/miqdadfwz/svelgo#project-structure) | [Contributing](https://github.com/miqdadfwz/svelgo#contributing) | [License](https://github.com/miqdadfwz/svelgo#license)
 
 ## Getting Started
