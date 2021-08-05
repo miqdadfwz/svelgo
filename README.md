@@ -2,6 +2,8 @@
 
 > Svelte baseline with pre-configured rich environment. Set up with simple command and you're set to Go!
 
+[Getting Started](https://github.com/miqdadfwz/svelgo#getting-started) | [Features](https://github.com/miqdadfwz/svelgo#features) | [Project Strucure](https://github.com/miqdadfwz/svelgo#project-structure) | [Contributing](https://github.com/miqdadfwz/svelgo#contributing) | [License](https://github.com/miqdadfwz/svelgo#license)
+
 ## Getting Started
 You don't need to install build configurations anymore, they are preconfigured. Just focus to what you need to build. It supports both client and server side rendering, run the rendering strategy based on your project requirement.
 
@@ -56,7 +58,7 @@ Utility-first modern CSS framework for rapidly building custom user interfaces, 
 ### Koa
 
 
-## Projet Structure
+## Project Structure
 ```bash
 .
 ├── LICENSE
