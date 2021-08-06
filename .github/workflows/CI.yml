@@ -7,6 +7,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - run: npm install && npm install -g @lhci/cli@0.8.x
-      - run: npm run build
-      - run: lhci autorun
+
+      - name: install pnpm
+        run: npm install -g pnpm
+
+      - name: install lhci
+        run: pnpm install && pnpm install -g @lhci/cli@0.8.x
+
+      - name: build
+        run: pnpm run build
+
+      - name: run lhci
+        run: lhci autorun

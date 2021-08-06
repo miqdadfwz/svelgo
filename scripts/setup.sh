@@ -41,6 +41,16 @@ else
         npm install
     fi
 
+    echo -e "\n${CHALK_BLUE}> Preparing package.json...${CHALK_RESET}"
+
+    if testcmd pnpm; then
+        node ../scripts/update-build-script.js pnpm
+    elif testcmd yarn; then
+        node ../scripts/update-build-script.js yarn
+    elif testcmd npm; then
+        node ../scripts/update-build-script.js npm
+    fi
+
     echo -e "\n${CHALK_GREEN}> You are good to go!${CHALK_RESET}"
     exit;
 fi
