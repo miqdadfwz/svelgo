@@ -8,7 +8,7 @@
 [Getting Started](https://github.com/miqdadfwz/svelgo#getting-started) | [Features](https://github.com/miqdadfwz/svelgo#features) | [Project Strucure](https://github.com/miqdadfwz/svelgo#project-structure) | [Contributing](https://github.com/miqdadfwz/svelgo#contributing) | [License](https://github.com/miqdadfwz/svelgo#license)
 
 ## Getting Started
-Create rapid svelte application with zero build configuration until you need it, just focus to what you need to make. It supports both client and server side rendering, run the rendering strategy based on your project requirement.
+Create rapid svelte application with zero build configuration until you need it, just focus on what you need to make. It supports both client and server side rendering, run the rendering strategy based on your project requirement.
 
 ### Installation
 
