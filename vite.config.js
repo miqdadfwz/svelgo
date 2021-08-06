@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs';
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { config } from 'dotenv-safe';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -8,7 +9,11 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 export default () => {
   const isDev = process.env.NODE_ENV === 'development';
   const isSSR = process.env.SSR_MODE === '1';
-  const { parsed } = config();
+
+  const { parsed } = config({
+    allowEmptyValues: process.env.CI,
+    path: process.env.CI ? resolve(__dirname, '.env.base') : resolve(__dirname, '.env'),
+  });
 
   return defineConfig({
     build: {
@@ -16,10 +21,14 @@ export default () => {
       sourcemap: isDev,
     },
     server: {
-      https: {
-        key: readFileSync(parsed.SSL_KEY),
-        cert: readFileSync(parsed.SSL_CERT),
-      },
+      ...(process.env.CI
+        ? {}
+        : {
+            https: {
+              key: readFileSync(parsed.SSL_KEY),
+              cert: readFileSync(parsed.SSL_CERT),
+            },
+          }),
     },
     optimizeDeps: {
       exclude: ['svelte'],

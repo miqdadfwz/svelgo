@@ -4,9 +4,16 @@ jobs:
   lighthouseci:
     name: Run LH Audit 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: install pnpm
         run: npm install -g pnpm
@@ -18,4 +25,4 @@ jobs:
         run: pnpm run build
 
       - name: run lhci
-        run: lhci autorun
+        run: lhci autorun --collect.numberOfRuns=1 --collect.startServerCommand="pnpm run start:server" --collect.url="http://localhost:3000/" --assert.assertions.render-blocking-resources="off" --assert.assertions.csp-xss="off"

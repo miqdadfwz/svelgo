@@ -40,6 +40,7 @@ const serve = async () => {
       prettyPrint: {},
     }),
   );
+  app.use(compress());
 
   app.use(mount('/assets', serveStatic(path.resolve(__dirname, '../assets'))));
   app.use(mount('/icons', serveStatic(path.resolve(__dirname, '../icons'))));
@@ -47,7 +48,6 @@ const serve = async () => {
 
   app.use(router.routes());
   app.use(router.allowedMethods());
-  app.use(compress());
 
   app.use(async (ctx, next) => {
     try {
@@ -60,6 +60,18 @@ const serve = async () => {
         ctx.res.setHeader('Cache-Control', 'no-cache');
 
         ctx.res.end(sw);
+      } else if (ctx.path === '/robots.txt') {
+        const robotsPath = path.resolve(__dirname, '../robots.txt ');
+        const robots = fs.readFileSync(robotsPath, 'utf-8');
+
+        if (ctx.method !== 'GET' && ctx.method === 'HEAD') {
+          ctx.res.setHeader('Allow', 'GET, HEAD, OPTIONS');
+          return;
+        }
+
+        ctx.res.setHeader('Cache-Control', 'public, max-age=' + ((86400000 / 1000) | 0));
+        ctx.type = 'text/plain';
+        ctx.body = robots;
       } else {
         const rendered = render();
         const js = getJS();
