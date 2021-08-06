@@ -1,7 +1,7 @@
 <img width="138" alt="Screen Shot 2021-08-05 at 17 51 33" src="https://user-images.githubusercontent.com/43945767/128338446-0e8e345f-4de5-43bb-8da7-b9984ab6c676.png">
 
 [![Test CI](https://github.com/miqdadfwz/svelgo/workflows/CI/badge.svg)](https://github.com/miqdadfwz/svelgo/actions)
-![License](https://img.shields.io/github/license/miqdadfwz/svelgo?label=License)
+[![License](https://img.shields.io/github/license/miqdadfwz/svelgo?label=License)](https://github.com/miqdadfwz/svelgo/blob/master/LICENSE)
 
 > Svelte baseline with pre-configured rich environment. Set up with simple command and you're set to Go!
 
@@ -50,18 +50,14 @@ npm run test --coverage
 ```
 
 ## Features
-### Vite
-Vite is an opinionated lightning-fast web build tool. With minimum configuration, vite provides fast development experience because it leverages native ES modules and doesn’t need to rebuild the whole bundle when something changes. For the compilation, Vite is using esbuild to transpile TypeScript which significantly faster than `tsc`.
-### Workbox
-SvelGo! is enhanced with modern PWA APIs to deliver improved capabilities along with reliability and installability on any device. You can get benefits from PWA features (offline UI, client caching, etc) thanks to [Workbox](https://developers.google.com/web/tools/workbox).
-### TypeScript
-This project is built on TypeScript with the intention of improving the developer experience and secure development.
-### TailwindCSS
-Utility-first modern CSS framework for rapidly building custom user interfaces, it lets you easily get started styling your website or application. No runtime cost needed.
-### Koa
-Light node.js fremework to utilize SSR support.
-### svelte-testing-library
-Along with Jest, svelte-testing-library provide simple API to render svelte component in test by avoiding implementation details.
+- **Vite**: An opinionated lightning-fast web build tool. With minimum configuration, vite provides fast development experience because it leverages native ES modules and doesn’t need to rebuild the whole bundle when something changes. For the compilation, Vite is using esbuild to transpile TypeScript which significantly faster than `tsc`.
+- **Workbox**: Enhance modern PWA APIs to deliver improved capabilities along with reliability and installability on any device. You can get benefits from PWA features (offline UI, client caching, etc) thanks to [Workbox](https://developers.google.com/web/tools/workbox).
+- **TypeScript**: This project is built on TypeScript with the intention of improving the developer experience and secure development.
+- **TailwindCSS**: Utility-first modern CSS framework for rapidly building custom user interfaces, it lets you easily get started styling your website or application. No runtime cost needed.
+- **Koa**: - Light node.js fremework to utilize SSR support.
+- **svelte-testing-library**: Along with Jest, svelte-testing-library provide simple API to render svelte component in test by avoiding implementation details.
+
+And many other utilities which may help you to collaborate with others.
 
 ## Project Structure
 ```bash
