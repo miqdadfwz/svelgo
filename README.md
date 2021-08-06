@@ -113,12 +113,11 @@ And other utilities which may help you to collaborate with others.
 
 ## Contributing
 ### Pull Request
-PRs to this prject is always welcome and can be a quick way to get your fix or improvement for the next release. In general, PRs should:
+PRs to this project is always welcome and can be a quick way to get your fix or improvement for the next release. In general, PRs should:
 
 - Only fix/add the functionality in question OR address wide-spread whitespace/style issues, not both.
 - Add unit or integration tests for fixed or changed functionality.
 - Address a single concern in the least number of changed lines as possible.
-- Include documentation in the repo or on our docs site.
 - For changes that address core functionality or would require breaking changes (e.g. a major release), it's best to open an Issue to discuss your proposal first. This is not required but can save time creating and reviewing changes.
 
 
