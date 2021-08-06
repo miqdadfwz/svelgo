@@ -8,7 +8,7 @@
 [Getting Started](https://github.com/miqdadfwz/svelgo#getting-started) | [Features](https://github.com/miqdadfwz/svelgo#features) | [Project Strucure](https://github.com/miqdadfwz/svelgo#project-structure) | [Contributing](https://github.com/miqdadfwz/svelgo#contributing) | [License](https://github.com/miqdadfwz/svelgo#license)
 
 ## Getting Started
-You don't need to install build configurations anymore, they are preconfigured. Just focus to what you need to build. It supports both client and server side rendering, run the rendering strategy based on your project requirement.
+Create rapid svelte application with zero build configuration until you need it, just focus to what you need to make. It supports both client and server side rendering, run the rendering strategy based on your project requirement.
 
 ### Installation
 
@@ -54,10 +54,10 @@ npm run test --coverage
 - **Workbox**: Enhance modern PWA APIs to deliver improved capabilities along with reliability and installability on any device. You can get benefits from PWA features (offline UI, client caching, etc) thanks to [Workbox](https://developers.google.com/web/tools/workbox).
 - **TypeScript**: This project is built on TypeScript with the intention of improving the developer experience and secure development.
 - **TailwindCSS**: Utility-first modern CSS framework for rapidly building custom user interfaces, it lets you easily get started styling your website or application. No runtime cost needed.
-- **Koa**: - Light node.js fremework to utilize SSR support.
+- **Koa**: Light node.js fremework to utilize SSR support.
 - **svelte-testing-library**: Along with Jest, svelte-testing-library provide simple API to render svelte component in test by avoiding implementation details.
 
-And many other utilities which may help you to collaborate with others.
+And other utilities which may help you to collaborate with others.
 
 ## Project Structure
 ```bash
