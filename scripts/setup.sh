@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 CHALK_RED=`tput setaf 1`
 CHALK_BLUE=`tput setaf 4`

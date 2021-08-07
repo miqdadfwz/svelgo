@@ -15,7 +15,7 @@ Create rapid svelte application with zero build configuration until you need it,
 ```bash
 npx degit miqdadfwz/svelgo my-svelte-project
 cd ./my-svelte-project
-bash ./scripts/setup.sh
+./scripts/setup.sh
 ```
 
 ### Development
@@ -34,7 +34,7 @@ npm run dev:server
 # Build both server and client environments
 # and generate production ready HTML files and assets that necessary to deploy and run 
 # your application.
-npm run build:client
+npm run build
 
 # Run the server locally for the production preview
 npm run start:server
