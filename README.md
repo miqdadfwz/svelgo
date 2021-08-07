@@ -3,12 +3,12 @@
 [![Test CI](https://github.com/miqdadfwz/svelgo/workflows/Unit/badge.svg)](https://github.com/miqdadfwz/svelgo/actions)
 [![LH CI](https://github.com/miqdadfwz/svelgo/workflows/CI/badge.svg)](https://github.com/miqdadfwz/svelgo/actions)
 
-> Svelte baseline with pre-configured rich environment. Set up with simple command and you're set to Go!
+> Svelte baseline with rich pre-configured environment. Set up with simple command and you're set to Go!
 
 [Getting Started](https://github.com/miqdadfwz/svelgo#getting-started) | [Features](https://github.com/miqdadfwz/svelgo#features) | [Project Strucure](https://github.com/miqdadfwz/svelgo#project-structure) | [Contributing](https://github.com/miqdadfwz/svelgo#contributing) | [License](https://github.com/miqdadfwz/svelgo#license)
 
 ## Getting Started
-Create rapid svelte application with zero build configuration until you need it, just focus to what you need to make. It supports both client and server side rendering, run the rendering strategy based on your project requirement.
+Create rapid svelte application with zero build configuration until you need it, just focus on what you need to make. It supports both client and server side rendering, run the rendering strategy based on your project requirement.
 
 ### Installation
 
