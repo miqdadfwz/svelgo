@@ -43,7 +43,7 @@
     "@types/app-root-dir": "^0.1.0",
     "@types/cssnano": "^4.0.1",
     "@types/dotenv-safe": "^8.1.2",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.1",
     "@types/koa": "^2.13.4",
     "@types/koa-compress": "^4.0.3",
     "@types/koa-mount": "^4.0.0",
