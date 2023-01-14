@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/miqdadfwz/svelgo#readme",
   "devDependencies": {
-    "@commitlint/cli": "^13.1.0",
+    "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^14.1.0",
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.12",
